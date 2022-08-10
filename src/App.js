@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { NavBar } from "./components/NavBar";
@@ -8,15 +8,27 @@ import { Projects } from "./components/Projects";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 
+export const AppContext = React.createContext();
+
 function App() {
+  const [theme, setTheme] = React.useState('dark');
+
+  const setDarkMode = () => {
+    setTheme('dark');
+  }
+  const setLightMode = () => {
+    setTheme('light');
+  }
   return (
-    <div className="App">
+    <div className={`App ${theme}`}>
+      <AppContext.Provider value={{theme, setDarkMode, setLightMode}}>
       <NavBar />
       <Banner />
       <Skills />
       <Projects />
       <Contact />
       <Footer />
+      </AppContext.Provider>
     </div>
   );
 }
