@@ -1,20 +1,5 @@
 /************ Custom Font ************/
-@font-face {
-	font-family: Centra;
-	src: url('./assets/font/CentraNo2-Bold.ttf');
-	font-weight: 700;
-}
-@font-face {
-	font-family: Centra;
-	src: url('./assets/font/CentraNo2-Medium.ttf');
-	font-weight: 500;
-}
-@font-face {
-	font-family: Centra;
-	src: url('./assets/font/CentraNo2-Book.ttf');
-	font-weight: 400;
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,900&family=Libre+Barcode+39+Text&display=swap');
 /************ Default Css ************/
 * {
   margin: 0;
@@ -28,12 +13,32 @@ html {
 }
 
 body {
-  font-weight: 400;
+  font-weight: 700;
   overflow-x: hidden;
   position: relative;
   background-color: #121212 !important;
   color: #fff !important;
-  font-family: 'Centra', sans-serif !important;
+  font-family: 'Exo 2', sans-serif !important;
+}
+
+.dark{
+  border-color: #444 !important;
+  color: #fff !important
+}
+.light{
+  border-color: #000 !important;
+  color: #000 !important;
+}
+
+.hor-spacer {
+  width: 10vw;
+  height: 1px;
+}
+.container-width {
+  max-width: 95% !important;
+}
+.container-height {
+  padding: 30px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -92,14 +97,22 @@ nav.navbar {
 }
 nav.navbar.scrolled {
   padding: 0px 0;
-  background-color: #121212;
+  /* background-color: #121212; */
+  backdrop-filter: blur(10px);
 }
+/* nav.navbar.scrolled .lego-housing {
+  height: 10vh;
+        background-color: transparent;
+        margin: 0px;
+        padding: 30px;
+        margin-top: 10vh;
+} */
 nav.navbar a.navbar-brand {
     width: 9%;
 }
 nav.navbar .navbar-nav .nav-link.navbar-link {
-  font-weight: 400;
-  color: #fff !important;
+  font-weight: 500;
+  color: #fff;
   letter-spacing: 0.8px;
   padding: 0 25px;
   font-size: 18px;
@@ -117,10 +130,22 @@ span.navbar-text {
     display: inline-block;
     margin-left: 14px;
 }
-.social-icon a {
+.social-icon a{
+  width: 42px;
+  height: 42px;
+  background: rgba(217, 217, 217, 0.1);
+  display: inline-flex;
+  border-radius: 50%;
+  margin-right: 6px;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  /* border: 1px solid rgba(255, 255, 255, 0.5); */
+}
+.social-icon-inner {
     width: 42px;
     height: 42px;
-    background: rgba(217, 217, 217, 0.1);
+    /* background: rgba(217, 217, 217, 0.1); */
     display: inline-flex;
     border-radius: 50%;
     margin-right: 6px;
@@ -134,7 +159,7 @@ span.navbar-text {
     width: 42px;
     height: 42px;
     position: absolute;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
     border-radius: 50%;
     transform: scale(0);
 	transition: 0.3s ease-in-out;
@@ -143,13 +168,35 @@ span.navbar-text {
     transform: scale(1);
 }
 .social-icon a img {
-	width: 40%;
+	width: 30%;
 	z-index: 1;
 	transition: 0.3s ease-in-out;
+  opacity: 0.8;
 }
-.social-icon a:hover img {
-	filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%);
+.social-icon a .light {
+  filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(0%) contrast(86%);
 }
+/* .social-icon a .dark {
+  filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%);
+}  */
+.logo{
+  height: 4vh;
+}
+/* .lego-housing{
+  margin-left: 3vw;
+  display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    justify-content: flex-end;
+    align-items: baseline;
+    padding: 5px 20px;
+    height: 30vh;
+    width: fit-content;
+    z-index: 3;
+    transition: all 1s;
+    background-color: red;
+} */
 .navbar-text button {
   font-weight: 700;
   color: #fff;
@@ -234,16 +281,28 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .banner {
   margin-top: 0;
   padding: 260px 0 100px 0;
-  background-image: url('./assets/img/banner-bg.png');
+  /* background-image: url('./assets/img/banner-bg.png'); */
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+/* for mobile screens */
+@media (max-width: 991px) {
+  .banner {
+    padding: 200px 0 100px 0;
+  }
+}
+.banner-dark{
+  background-color: #121212;
+}
+.banner-light{
+  background-color: #FAF9F6;
 }
 .banner .tagline {
   font-weight: 700;
   letter-spacing: 0.8px;
   padding: 8px 10px;
-  background: linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%);
+  /* background: linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%); */
   border: 1px solid rgba(255, 255, 255, 0.5);
   font-size: 20px;
   margin-bottom: 16px;
@@ -283,21 +342,28 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin-left: 25px;
 }
 .banner img {
-  animation: updown 3s linear infinite;
+  animation: updown 7s linear infinite;
 }
 @keyframes updown {
     0% {
-        transform: translateY(-20px);
+        transform: translate3d(-20px, -10px, 20px)
     }
     50% {
-        transform: translateY(20px);
+      transform: translate3d(20px, 10px, -20px)
     }
     100% {
-        transform: translateY(-20px);
+      transform: translate3d(-20px, -10px, 20px)
     }
+}
+.floating-image{
+  height: 50vh;
 }
 .txt-rotate > .wrap {
   border-right: 0.08em solid #666;
+  /* font-family: 'Libre Barcode 39 Text', cursive; */
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 500;
+  font-size: large;
 }
 
 /************ Skills Css ************/
@@ -305,9 +371,24 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   padding: 0 0 50px 0;
   position: relative;
 }
+.skill-light{
+  background-color: #e9ecef !important;
+  height: 60vh;
+}
+.skill-dark{
+  background-color: #444444!important;
+  height: 60vh;
+}
+.skill-bx-light{
+  background-color: #fff !important;
+}
+.skill-bx-dark{
+  background-color: #000 !important;
+}
 .skill-bx {
-  background: #151515;
-  border-radius: 64px;
+  /* background: #151515; */
+  /* border-radius: 64px; */
+  border: 1px solid;
   text-align: center;
   padding: 60px 50px;
   margin-top: -60px;
@@ -344,7 +425,14 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .project {
   padding: 80px 0;
   position: relative;
-  background-color: black;
+  /* background-color: black; */
+}
+.project-light{
+  background-color: #FAF9F6 !important;
+  /* height: 60vh; */
+}
+.project-dark{
+  background-color: #121212 !important;
 }
 .project h2 {
 	font-size: 45px;

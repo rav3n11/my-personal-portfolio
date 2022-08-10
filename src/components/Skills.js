@@ -1,11 +1,18 @@
-import meter1 from "../assets/img/meter1.svg";
-import meter2 from "../assets/img/meter2.svg";
-import meter3 from "../assets/img/meter3.svg";
+import react_light from "../assets/img/react-light.svg";
+import react_dark from "../assets/img/react-dark.svg";
+import node_light from "../assets/img/node-light.svg";
+import node_dark from "../assets/img/node-dark.svg";
+import flutter_light from "../assets/img/meter3.svg";
+import flutter_dark from "../assets/img/meter3.svg";
+import angular_light from "../assets/img/meter3.svg";
+import angular_dark from "../assets/img/meter3.svg";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import arrow1 from "../assets/img/arrow1.svg";
 import arrow2 from "../assets/img/arrow2.svg";
 import colorSharp from "../assets/img/color-sharp.png"
+import { useContext } from "react";
+import { AppContext } from "../App";
 
 export const Skills = () => {
   const responsive = {
@@ -28,37 +35,39 @@ export const Skills = () => {
     }
   };
 
+  const theme = useContext(AppContext).theme;
+
   return (
-    <section className="skill" id="skills">
+    <section id="skills" className={`skill-${theme}`}>
         <div className="container">
             <div className="row">
                 <div className="col-12">
-                    <div className="skill-bx wow zoomIn">
+                    <div className={`skill-bx ${theme} skill-bx-${theme} wow zoomIn`}>
                         <h2>Skills</h2>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br></br> Lorem Ipsum has been the industry's standard dummy text.</p>
+                        <p>The skills I'm confident at<br></br> Ready to learn others...</p>
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
                             <div className="item">
-                                <img src={meter1} alt="Image" />
-                                <h5>Web Development</h5>
+                                <img src={theme === 'light' ? react_light : react_dark} alt="Image" />
+                                <h5>React</h5>
                             </div>
                             <div className="item">
-                                <img src={meter2} alt="Image" />
-                                <h5>Brand Identity</h5>
+                                <img src={theme === 'light' ? node_light : node_dark} alt="Image" />
+                                <h5>NodeJs</h5>
                             </div>
                             <div className="item">
-                                <img src={meter3} alt="Image" />
-                                <h5>Logo Design</h5>
+                                <img src={theme === 'light' ? react_light : react_dark} alt="Image" />
+                                <h5>Flutter</h5>
                             </div>
                             <div className="item">
-                                <img src={meter1} alt="Image" />
-                                <h5>Web Development</h5>
+                                <img src={theme === 'light' ? react_light : react_dark} alt="Image" />
+                                <h5>Angular</h5>
                             </div>
                         </Carousel>
                     </div>
                 </div>
             </div>
         </div>
-        <img className="background-image-left" src={colorSharp} alt="Image" />
+        {/* <img className="background-image-left" src={colorSharp} alt="Image" /> */}
     </section>
   )
 }
