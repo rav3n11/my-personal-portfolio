@@ -308,7 +308,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 /* media query for mobile */
 
 @media (max-width: 768px) {
-  .nav-style {
+  .container-width {
     width: 95% !important;
   }
 }
