@@ -44,6 +44,8 @@ export const Banner = () => {
     }
   }
 
+  //This is not that importatnt
+
   const theme = useContext(AppContext).theme;
 
   useEffect(() => {
