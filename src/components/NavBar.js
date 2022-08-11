@@ -41,8 +41,8 @@ export const NavBar = () => {
 
   return (
     <Router>
-      <Navbar expand="md" className={`${scrolled ? "scrolled" : ""} ${theme}`}>
-        <Container className="container-width container-height">
+      <Navbar expand="md" className={`nav-style ${scrolled ? "scrolled" : ""} ${theme}`}>
+        <Container className="container-width container-height container-justify">
           <Navbar.Brand href="/">
             <div className="lego-housing">
               <img
