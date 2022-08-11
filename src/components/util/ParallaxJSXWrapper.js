@@ -31,7 +31,6 @@ function ParallaxJSXWrapper(JSXElement, weight) {
                 this.setState({ start_position: ref.current.offsetTop }, () => {
                     this.wrappedJSXElement = ref;
                     document.addEventListener("scroll", this.animate_scroll);
-                    console.log('scroll event added');
                 });
             });
         }

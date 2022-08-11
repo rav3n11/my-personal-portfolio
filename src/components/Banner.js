@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext, useCallback, useMemo} from "react";
+import { useState, useEffect, useContext, useMemo} from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import batman from "../assets/icons/batman.svg";
 import superman from "../assets/icons/lego-superman.svg";
@@ -46,6 +46,7 @@ export const Banner = () => {
       setIsDeleting(false);
       setLoopNum(loopNum + 1);
       setIndex(1);
+      console.log({index})
       setDelta(500);
     } else {
       setIndex(prevIndex => prevIndex + 1);
@@ -59,23 +60,24 @@ export const Banner = () => {
       <img src={batman} className="floating-image" alt="Lego batman" />
     </div>,
     0.05
-  ), [theme]);
+  ));
 
   const Superman = useMemo(() => JSX_withParallax(
     <div className="superman">
       <img src={superman} className="floating-image" alt="Lego superman" />
     </div>,
     0.05
-  ), [theme]);
+  ));
   return (
     <section className={`banner banner-${theme}`} id="home">
+      <div className="spacer"></div>
       <Container>
         <Row className="aligh-items-center">
           <Col xs={12} md={6} xl={7}>
             <TrackVisibility>
               {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <span className={`tagline ${theme}`}><span className="txt-rotate" dataPeriod="1000" data-rotate='[  "MERN...", "PERN...", "PHART..."]'><span className="wrap">{text}</span></span></span>
+              <div>
+                <span className={`tagline ${theme}`}><span className="txt-rotate" data-period="1000" data-rotate='[  "MERN...", "PERN...", "PHART..."]'><span className="wrap">{text}</span></span></span>
                 <h1>{`Hi! I'm Bereket...`} </h1>
                   <p>A web developer from Ethiopia. I build beautiful responsive web apps, in any stack you can imagine.</p>
                   <button className={theme} onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>

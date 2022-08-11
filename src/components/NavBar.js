@@ -9,7 +9,7 @@ import navIcon3 from "../assets/img/nav-icon3.svg";
 import { BsFillMoonFill } from "react-icons/bs";
 import { BsSun } from "react-icons/bs";
 
-import { HashLink } from "react-router-hash-link";
+import { AiOutlineMenu } from "react-icons/ai";
 import { AppContext } from "../App";
 import { BrowserRouter as Router } from "react-router-dom";
 
@@ -50,7 +50,7 @@ export const NavBar = () => {
             </div>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
-            <span className="navbar-toggler-icon"></span>
+            <AiOutlineMenu className={theme} />
           </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
