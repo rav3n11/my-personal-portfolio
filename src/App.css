@@ -184,7 +184,7 @@ span.navbar-text {
 .social-icon a:hover::before {
   transform: scale(1);
 }
-.social-icon a img {
+.social-icon a .social-img {
   width: 30%;
   z-index: 1;
   transition: 0.3s ease-in-out;

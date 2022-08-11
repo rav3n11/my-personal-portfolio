@@ -14,19 +14,10 @@ export const Banner = () => {
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
+  const [anchor] = useState(0);
   const toRotate = [ "MERN...", "PERN...", "PHART..."];
   const period = 2000;
-
-  useEffect(() => {
-    let ticker = setInterval(() => {
-      tick();
-    }, delta);
-
-    return () => { clearInterval(ticker) };
-  }, [text])
-
   
-
   const tick = () => {
     let i = loopNum % toRotate.length;
     let fullText = toRotate[i];
@@ -55,19 +46,27 @@ export const Banner = () => {
 
   const theme = useContext(AppContext).theme;
 
+  useEffect(() => {
+    let ticker = setInterval(() => {
+      tick();
+    }, delta);
+
+    return () => { clearInterval(ticker) };
+  }, [text])
+
   const Batman = useMemo(() => JSX_withParallax(
     <div className=" batman">
       <img src={batman} className="floating-image" alt="Lego batman" />
     </div>,
     0.05
-  ));
+  ), [anchor]);
 
   const Superman = useMemo(() => JSX_withParallax(
     <div className="superman">
       <img src={superman} className="floating-image" alt="Lego superman" />
     </div>,
     0.05
-  ));
+  ), [anchor]);
   return (
     <section className={`banner banner-${theme}`} id="home">
       <div className="spacer"></div>

@@ -2,15 +2,8 @@ import react_light from "../assets/img/react-light.svg";
 import react_dark from "../assets/img/react-dark.svg";
 import node_light from "../assets/img/node-light.svg";
 import node_dark from "../assets/img/node-dark.svg";
-import flutter_light from "../assets/img/meter3.svg";
-import flutter_dark from "../assets/img/meter3.svg";
-import angular_light from "../assets/img/meter3.svg";
-import angular_dark from "../assets/img/meter3.svg";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import arrow1 from "../assets/img/arrow1.svg";
-import arrow2 from "../assets/img/arrow2.svg";
-import colorSharp from "../assets/img/color-sharp.png"
 import { useContext } from "react";
 import { AppContext } from "../App";
 
@@ -47,19 +40,19 @@ export const Skills = () => {
                         <p>The skills I'm confident at<br></br> Ready to learn others...</p>
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
                             <div className="item">
-                                <img src={theme === 'light' ? react_light : react_dark} alt="Image" />
+                                <img src={theme === 'light' ? react_light : react_dark} alt="react" />
                                 <h5>React</h5>
                             </div>
                             <div className="item">
-                                <img src={theme === 'light' ? node_light : node_dark} alt="Image" />
+                                <img src={theme === 'light' ? node_light : node_dark} alt="node" />
                                 <h5>NodeJs</h5>
                             </div>
                             <div className="item">
-                                <img src={theme === 'light' ? react_light : react_dark} alt="Image" />
+                                <img src={theme === 'light' ? react_light : react_dark} alt="flutter" />
                                 <h5>Flutter</h5>
                             </div>
                             <div className="item">
-                                <img src={theme === 'light' ? react_light : react_dark} alt="Image" />
+                                <img src={theme === 'light' ? react_light : react_dark} alt="angular" />
                                 <h5>Angular</h5>
                             </div>
                         </Carousel>
