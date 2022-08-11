@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Col, Row, Alert } from "react-bootstrap";
+import { AppContext } from "../App";
 
 export const Newsletter = ({ status, message, onValidated }) => {
   const [email, setEmail] = useState('');
@@ -21,9 +22,10 @@ export const Newsletter = ({ status, message, onValidated }) => {
     setEmail('');
   }
 
+  const theme = useContext(AppContext).theme;
   return (
       <Col lg={12}>
-        <div className="newsletter-bx wow slideInUp">
+        <div className={`newsletter-bx skill-bx-${theme} ${theme} wow slideInUp`}>
           <Row>
             <Col lg={12} md={6} xl={5}>
               <h3>Subscribe to our Newsletter<br></br> & Never miss latest updates</h3>

@@ -1,9 +1,13 @@
-import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
-import projImg1 from "../assets/img/project-img1.png";
-import projImg2 from "../assets/img/project-img2.png";
-import projImg3 from "../assets/img/project-img3.png";
-import colorSharp2 from "../assets/img/color-sharp2.png";
+import coffee_1 from "../assets/img/coffee_land_1.png";
+import coffee_2 from "../assets/img/coffee_land.png";
+import lego_1 from "../assets/img/lego_1.png";
+import lego_2 from "../assets/img/lego_2.png";
+import lego_3 from "../assets/img/lego_3.png";
+// import bitcoin_1 from "../assets/img/bitcoin_1.png"
+import bitcoin_2 from "../assets/img/bitcoin_2.png"
+// import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 import { useContext } from "react";
@@ -13,35 +17,35 @@ export const Projects = () => {
 
   const projects = [
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
+      title: "CoffeeLessonz Website",
+      description: "A landing website for a promising EdTech startup.",
+      imgUrl: coffee_1,
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
+      title: "CoffeeLessonz Website",
+      description: "A landing website for a promising EdTech startup.",
+      imgUrl: coffee_2,
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
+      title: "Lego Website",
+      description: "A Lego themed website built for fun.",
+      imgUrl: lego_1,
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
+      title: "Lego Website",
+      description: "A Lego themed website built for fun.",
+      imgUrl: lego_2,
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
+      title: "Lego Website",
+      description: "A Lego themed website built for fun.",
+      imgUrl: lego_3,
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
-    },
+      title: "Bitcoin.et",
+      description: "A website for a cryptocurrency exchange.",
+      imgUrl: bitcoin_2,
+    }
   ];
 
   const theme = useContext(AppContext).theme;
@@ -53,9 +57,9 @@ export const Projects = () => {
           <Col size={12}>
             <TrackVisibility>
               {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
+              <div>
                 <h2>Projects</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <p>These are some projects that I've worked on...</p>
                 <Row>
                         {
                           projects.map((project, index) => {
@@ -73,7 +77,7 @@ export const Projects = () => {
           </Col>
         </Row>
       </Container>
-      <img className="background-image-right" src={colorSharp2}></img>
+      {/* <img className="background-image-right" src={colorSharp2}></img> */}
     </section>
   )
 }

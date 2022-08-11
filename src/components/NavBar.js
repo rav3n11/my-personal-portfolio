@@ -2,14 +2,14 @@ import { useState, useEffect, useContext } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import lego from "../assets/icons/lego.svg";
 import lego_white from "../assets/icons/lego-white.svg";
-import navIcon1 from "../assets/img/nav-icon1.svg";
-import navIcon2 from "../assets/img/nav-icon2.svg";
-import navIcon3 from "../assets/img/nav-icon3.svg";
+import { BsLinkedin } from "react-icons/bs";
+import { BsGithub } from "react-icons/bs";
+import { BsTelegram } from "react-icons/bs";
 
 import { BsFillMoonFill } from "react-icons/bs";
 import { BsSun } from "react-icons/bs";
 
-import { HashLink } from "react-router-hash-link";
+import { AiOutlineMenu } from "react-icons/ai";
 import { AppContext } from "../App";
 import { BrowserRouter as Router } from "react-router-dom";
 
@@ -45,38 +45,43 @@ export const NavBar = () => {
         <Container className="container-width container-height">
           <Navbar.Brand href="/">
             <div className="lego-housing">
-
-            <img className="logo" src={theme === "light" ? lego : lego_white} alt="Logo" />
+              <img
+                className="logo"
+                src={theme === "light" ? lego : lego_white}
+                alt="Logo"
+              />
             </div>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
-            <span className="navbar-toggler-icon"></span>
+            <AiOutlineMenu className={theme} />
           </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               <Nav.Link
                 href="#home"
-                className={
-                  `${activeLink === "home" ? "active navbar-link" : "navbar-link"} ${theme}`
-                }
+                className={`${
+                  activeLink === "home" ? "active navbar-link" : "navbar-link"
+                } ${theme}`}
                 onClick={() => onUpdateActiveLink("home")}
               >
                 Home
               </Nav.Link>
               <Nav.Link
                 href="#skills"
-                className={
-                  `${activeLink === "skills" ? "active navbar-link" : "navbar-link"} ${theme}`
-                }
+                className={`${
+                  activeLink === "skills" ? "active navbar-link" : "navbar-link"
+                } ${theme}`}
                 onClick={() => onUpdateActiveLink("skills")}
               >
                 Skills
               </Nav.Link>
               <Nav.Link
                 href="#projects"
-                className={
-                  `${activeLink === "projects" ? "active navbar-link" : "navbar-link"} ${theme}`
-                }
+                className={`${
+                  activeLink === "projects"
+                    ? "active navbar-link"
+                    : "navbar-link"
+                } ${theme}`}
                 onClick={() => onUpdateActiveLink("projects")}
               >
                 Projects
@@ -84,14 +89,14 @@ export const NavBar = () => {
             </Nav>
             <span className="navbar-text">
               <div className={`social-icon`}>
-                <a href="#">
-                  <img className={theme} src={navIcon1} alt="" />
+                <a href="https://www.linkedin.com/in/bereket-terefe-2307701a1">
+                  <BsLinkedin className={`social-img ${theme}`} />
                 </a>
-                <a href="#">
-                  <img className={theme} src={navIcon2} alt="" />
+                <a href="https://github.com/rav3n11">
+                  <BsGithub className={`social-img ${theme}`} />
                 </a>
-                <a href="#">
-                  <img className={theme} src={navIcon3} alt="" />
+                <a href="https://t.me/Bereke_t">
+                  <BsTelegram className={`social-img ${theme}`} />
                 </a>
               </div>
               <div className="hor-spacer"></div>
