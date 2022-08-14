@@ -1,4 +1,4 @@
-# A (much needed) personal portfolio
+# A personal portfolio template
 
 Yours to fork if you like it... Just uses plain old css and no Typescript.
 
