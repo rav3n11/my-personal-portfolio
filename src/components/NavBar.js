@@ -36,6 +36,7 @@ export const NavBar = () => {
   };
 
   const theme = useContext(AppContext).theme;
+  const toggleNav = useContext(AppContext).toggleNav;
   const setDarkMode = useContext(AppContext).setDarkMode;
   const setLightMode = useContext(AppContext).setLightMode;
 
@@ -52,7 +53,7 @@ export const NavBar = () => {
               />
             </div>
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav">
+          <Navbar.Toggle onClick={toggleNav} aria-controls="basic-navbar-nav">
             <AiOutlineMenu className={theme} />
           </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
