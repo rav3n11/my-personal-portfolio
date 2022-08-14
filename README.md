@@ -1,7 +1,5 @@
 # A (much needed) personal portfolio
 
-Developer: Bereket Terefe
-
 Yours to fork if you like it... Just uses plain old css and no Typescript.
 
 also Used: ~~threeJs~~, bootstrap and css-animate
