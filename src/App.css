@@ -19,11 +19,11 @@ body {
   background-color: #121212 !important;
   color: #fff !important;
   font-family: "Exo 2", sans-serif !important;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
-.App{
+.App {
   overflow: hidden;
 }
 body::-webkit-scrollbar {
@@ -150,7 +150,13 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 }
 span.navbar-text {
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+@media (max-width: 768px) {
+  span.navbar-text {
+    padding-top: 20px;
+  }
 }
 .social-icon {
   display: inline-block;
@@ -328,7 +334,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     padding: 200px 0 100px 0;
   }
   .banner .spacer {
-    height: 100px;
+    height: 0px;
+    transition: all 0.3s;
+  }
+  .high{
+    height: 100px !important;
   }
 }
 .banner-dark {
@@ -404,7 +414,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   font-weight: 500;
   font-size: large;
 }
-.send-button{
+.send-button {
   width: fit-content;
 }
 
@@ -429,7 +439,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .skill-bx {
   /* background: #151515; */
-  /* border-radius: 64px; */
+  border-radius: 7px;
   border: 1px solid;
   text-align: center;
   padding: 60px 50px;
@@ -545,7 +555,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .proj-imgbx {
   position: relative;
-  /* border-radius: 30px; */
+  border-radius: 7px;
   overflow: hidden;
   margin-bottom: 24px;
   height: 30vh;

@@ -12,6 +12,7 @@ export const AppContext = React.createContext();
 
 function App() {
   const [theme, setTheme] = React.useState('dark');
+  const [navOn, setNavOn] = React.useState(false)
 
   const setDarkMode = () => {
     setTheme('dark');
@@ -19,9 +20,12 @@ function App() {
   const setLightMode = () => {
     setTheme('light');
   }
+  const toggleNav = () =>{
+    setNavOn(!navOn)
+  }
   return (
     <div className={`App ${theme}`}>
-      <AppContext.Provider value={{theme, setDarkMode, setLightMode}}>
+      <AppContext.Provider value={{theme, setDarkMode, setLightMode, navOn, toggleNav}}>
       <NavBar />
       <Banner />
       <Skills />

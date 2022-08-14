@@ -15,7 +15,7 @@ export const Banner = () => {
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
   const [anchor] = useState(0);
-  const toRotate = [ "MERN...", "PERN...", "PHART..."];
+  const toRotate = ["Initializing batcave music...","Choosing Stack...", "MERN...", "PERN...", "PHART... Ha Ha..."];
   const period = 2000;
   
   const tick = () => {
@@ -47,6 +47,7 @@ export const Banner = () => {
   //This is not that importatnt
 
   const theme = useContext(AppContext).theme;
+  const navOn = useContext(AppContext).navOn;
 
   useEffect(() => {
     let ticker = setInterval(() => {
@@ -71,7 +72,7 @@ export const Banner = () => {
   ), [anchor]);
   return (
     <section className={`banner banner-${theme}`} id="home">
-      <div className="spacer"></div>
+      <div className={`spacer ${navOn ? "high" : ""}`}></div>
       <Container>
         <Row className="aligh-items-center">
           <Col xs={12} md={6} xl={7}>
@@ -79,8 +80,9 @@ export const Banner = () => {
               {({ isVisible }) =>
               <div>
                 <span className={`tagline ${theme}`}><span className="txt-rotate" data-period="1000" data-rotate='[  "MERN...", "PERN...", "PHART..."]'><span className="wrap">{text}</span></span></span>
-                <h1>{`Hi! I'm Bereket...`} </h1>
-                  <p>A web developer from Ethiopia. I build beautiful responsive web apps, in any stack you can imagine.</p>
+                <h1>{`I'm Batman.`} </h1>
+                  <p>JK. Hi! I'm Bereket... A web developer from Ethiopia. I build beautiful responsive web apps, in any stack you can imagine.</p>
+                  <p> Except flutter. “Hard pass.” </p>
                   <button className={theme} onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
               </div>}
             </TrackVisibility>
