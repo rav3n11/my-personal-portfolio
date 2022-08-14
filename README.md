@@ -2,6 +2,8 @@
 
 Yours to fork if you like it... Just uses plain old css and no Typescript.
 
+![Hosted View](/src//assets/img/batman.png)
+
 also Used: ~~threeJs~~, bootstrap and css-animate
 
 # Check it out live [here](https://berekett.me)
