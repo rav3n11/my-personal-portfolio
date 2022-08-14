@@ -31,11 +31,11 @@ export const Skills = () => {
   const theme = useContext(AppContext).theme;
 
   return (
-    <section id="skills" className={`skill-${theme}`}>
+    <section className={`skill-${theme}`}>
         <div className="container">
             <div className="row">
                 <div className="col-12">
-                    <div className={`skill-bx ${theme} skill-bx-${theme} wow zoomIn`}>
+                    <div id="skills" className={`skill-bx ${theme} skill-bx-${theme} wow zoomIn`}>
                         <h2>Skills</h2>
                         <p>The skills I'm confident at<br></br> Ready to learn others...</p>
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
