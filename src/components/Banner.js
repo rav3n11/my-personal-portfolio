@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext, useMemo} from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Nav } from "react-bootstrap";
 import batman from "../assets/icons/batman.svg";
 import superman from "../assets/icons/lego-superman.svg";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
@@ -83,7 +83,7 @@ export const Banner = () => {
                 <h1>{`I'm Batman.`} </h1>
                   <p>JK. Hi! I'm Bereket... A web developer from Ethiopia. I build beautiful responsive web apps, in any stack you can imagine.</p>
                   <p> Except flutter. “Hard pass.” </p>
-                  <button className={theme} onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
+                  <Nav.Link href="#connect" className={`button ${theme}`} onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></Nav.Link>
               </div>}
             </TrackVisibility>
           </Col>

@@ -51,7 +51,7 @@ export const Projects = () => {
   const theme = useContext(AppContext).theme;
 
   return (
-    <section className={`project project-${theme}`} id="project">
+    <section className={`project project-${theme}`} id="projects">
       <Container>
         <Row>
           <Col size={12}>
