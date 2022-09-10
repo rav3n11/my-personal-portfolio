@@ -21,6 +21,7 @@ body {
   font-family: "Exo 2", sans-serif !important;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+  user-select: none; /* Standard syntax */
 }
 
 .App {
@@ -117,7 +118,7 @@ nav.navbar {
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 9999;
+  z-index: 5;
   transition: 0.32s ease-in-out;
   margin-bottom: 0px;
 }
@@ -125,6 +126,7 @@ nav.navbar.scrolled {
   padding: 0px 0;
   /* background-color: #121212; */
   backdrop-filter: blur(10px);
+  /* z-index: 5 */
 }
 /* nav.navbar.scrolled .lego-housing {
   height: 10vh;
@@ -802,6 +804,55 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   flex-direction: row;
   width: 22vw;
   height: 40vh;
+}
+/* easter-egg-styles */
+.easter-egg{
+  height: 120px;
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #faf9f6;
+  /* rotate by 45 degrees */
+  transform: rotateY(0deg) rotate(60deg);
+  border-radius: 10px;
+  padding: 20px;
+  position: fixed;
+  top: -40px;
+  left: -40px;
+  z-index: 6;
+  transition: all 1s;
+}
+.easter-egg:hover{
+  cursor: pointer;
+}
+.easter-egg-image{
+  height: 25px;
+  width: 25px;
+  transform: rotateY(0deg) rotate(-60deg);
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  transition: all 1s;
+}
+.easter-egg-a{
+  text-decoration: none;
+}
+.easter-egg.scrolled{
+  width: 80px;
+  height: 80px;
+  opacity: 0.6;
+  top: 20vh;
+  left: -20px;
+  transform: rotateY(0deg) rotate(45deg);
+}
+.easter-egg-image.scrolled{
+  /* height: 15px;
+  width: 15px;
+  top: 5px;
+  right: 5px; */
+  transform: rotateY(0deg) rotate(-45deg);
 }
 /* media for mobile view */
 @media (max-width: 768px) {
