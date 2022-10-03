@@ -823,6 +823,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   left: -40px;
   z-index: 6;
   transition: all 1s;
+  will-change: top;
 }
 .easter-egg:hover{
   cursor: pointer;
